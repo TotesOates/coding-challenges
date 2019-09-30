@@ -1,23 +1,31 @@
 <script src='index.js'></script>
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
 
 <body>
   <h1> VisionWeb SDET Challenges </h1>
   
    <div id='palindrome'>
     <h3 id='palindrome-title'>1. Check if integer is palindrome</h3>
+    <div class='examples'>Example Input: 12321</div>
     <input type='text' id='palindrome-input' placeholder='Type in numbers here' oninput="intPalindrome(document.getElementById('palindrome-input').value)"/>
-    <span id='palindrome-result'> Result: No Input </span>
+    <span id='palindrome-result'> Result: No Input Found </span>
   </div>
   
   <div id='string-reverse'>
-  <h3 id='string-title'>2. Reversing a string</h3>
-  <input type='text' id='string-input' placeholder='Type in a string'/>
-  <button onclick="reverseString(document.getElementById('string-input').value)">Submit</button>
-  <span id='string-result'>Result: No Input</span>
+    <h3 id='string-title'>2. Reversing a string</h3>
+    <div class='examples'>Example Input: Hello World</div>
+    <input type='text' id='string-input' placeholder='Type in a string'/>
+    <button onclick="reverseString(document.getElementById('string-input').value)">Submit</button>
+    <span id='string-result'>Result: No Input Found</span>
   </div>
   
-  
-  <h3>3. Filter out zeros from array</h3>
-  <input> </input>
-  <button>Submit</button>
+  <div id='filter-zero'>
+    <h3>3. Filter out zeros from array</h3>
+    <div class='examples'>Example Input: 1, 2, 0, 3</div>
+    <input type='text' id='filter-input' placeholder='Type in an array' />
+    <button onclick="filterZero(document.getElementById('filter-input').value)">Submit</button>
+    <span id='filter-result'>Result: No Input Found</span>
+  </div>
 </body>

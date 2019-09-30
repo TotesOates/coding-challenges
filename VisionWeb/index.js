@@ -2,8 +2,8 @@
 function intPalindrome(int) {
   //   reversedInt returns a reversed string of int
     let reversedInt = parseInt(int.split('').reverse().join(''));
-  //   regex matcher
-    let stringOnly = /^\d+$/gm
+  //   regex matcher to make sure only numbers are in input
+    let digitOnly = /^\d+$/gm
   
   //   DOM variables
     let palindromeInput = document.getElementById('palindrome-input').value;
@@ -11,7 +11,7 @@ function intPalindrome(int) {
     let resultParent = document.getElementById('palindrome');
     let title = resultParent.appendChild(result);
     
-    if (!stringOnly.test(palindromeInput) && palindromeInput.length != 0) {
+    if (!digitOnly.test(palindromeInput) && palindromeInput.length != 0) {
         result.innerHTML = "Result: Numbers only"
         return title;
   //   conditional checks type to make sure both inputs are numbers
@@ -37,11 +37,11 @@ function intPalindrome(int) {
   // 2. Reversing a string
   function reverseString(str){
     //   DOM variables
-    // let stringInput = document.getElementById('string-input').value;
     let resultText = document.getElementById('string-result');
     let resultParent = document.getElementById('string-reverse');
-    if (str.length > 0){
 
+  // Condition protects against bad actors
+    if (str.length > 0){
   //   Turns str into an array to use the reverse method and joins them back into a string
     let reversedString = str.split(' ').reverse().join(' ');
     resultText.innerHTML = `Result: ${reversedString}`;
@@ -56,10 +56,24 @@ function intPalindrome(int) {
   
   
   // 3. Filter zeros out of an array
-  function filterZero(arr) {
-    if (arr.length == 0) return null;
+  function filterZero(input) {
+    //   DOM variables
+    let resultText = document.getElementById('filter-result');
+    let resultParent = document.getElementById('filter-zero');
+
+    let array = input.split(',');
+    // Regex to validate correct data
+    let arrayFormat = /(\d,?\d?,)+\d/
+    
+    if (arrayFormat.test(array.toString())){
   //   Iterates through the array, filters out and returns items that do not equal 0
-    return arr.filter(item => item != 0);
+    let filtered = array.filter(item => item != 0).join(', ');
+    resultText.innerHTML = `Result: [${filtered}]`;
+    return resultParent.appendChild(resultText);
+    } else if (!arrayFormat.test(array.toString())) {
+      resultText.innerHTML = `Results: Wrong Format`;
+      return resultParent.appendChild(resultText)
+    }
   }
   
   // // Returns [1, 2, 5, 50]
