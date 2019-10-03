@@ -1,0 +1,44 @@
+body {
+  padding: 30px;
+}
+.red1 {
+  position: absolute;
+  /* z-index: 1; */
+  width: 400px;
+  height: 200px;
+  background: red;
+}
+.green2 {
+  position: absolute;
+  /* z-index: 1; */
+  width: 400px;
+  height: 200px;
+  top: 250px;
+  background: green;
+}
+
+.purple {
+  z-index: 9;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  width: 150px;
+  height: 130px;
+  bottom: -20px;
+  background: purple;
+}
+
+.blue {
+  z-index: 9;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  width: 150px;
+  height: 130px;
+  top: -50px;
+  background: blue;
+}
